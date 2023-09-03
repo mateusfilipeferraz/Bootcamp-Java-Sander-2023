@@ -1,20 +1,34 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package trycatch;
 
-/**
- *
- * @author Mateus
- */
+import java.util.Scanner;
+/*@author Mateus*/
+
 public class TryCatch {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner sc = new Scanner(System.in);
+        try {
+            // Solicitar nome
+            System.out.print("Digite seu nome: ");
+            String nome = sc.nextLine();
+
+            // Solicitar idade
+            System.out.print("Digite sua idade: ");
+            int idade = Integer.parseInt(sc.nextLine());
+
+            // Solicitar altura
+            System.out.print("Digite sua altura em metros: ");
+            double altura = Double.parseDouble(sc.nextLine());
+
+            // Exibir os dados inseridos
+            System.out.println("\nDados inseridos:");
+            System.out.println("Nome: " + nome);
+            System.out.println("Idade: " + idade + " anos");
+            System.out.println("Altura: " + altura + " metros");
+
+        } catch (NumberFormatException e) {
+            System.out.println("Erro de formato: Certifique-se de inserir um número válido para idade e altura.");
+        }
+        sc.close();
     }
-    
 }
